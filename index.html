@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<style>
+    .editorbox {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.editorFarmat {
+    box-shadow: 3px 4px 5px #ccc;
+    padding: 10px;
+    border: 1px solid;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+textarea#etfText {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    border-color: #6e00ff;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 3px 4px 5px #ccc;
+    max-width: 460px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+i.txtcase {
+    font-style: normal;
+    font-size: 20px;
+}
+.editorFarmat i {
+    cursor: pointer;
+}
+body {
+    background: #e8e8e8;
+}
+</style>
+<body>
+    
+    <div class="editorbox">
+        <div class="editorFarmat">
+            <input type="number" value="16" onchange="rte1(this);">
+            <i class="fa-solid fa-bold" onclick="rte2(this);"></i>
+            <i class="fa-solid fa-italic" onclick="rte3(this);"></i>
+            <i class="fa-solid fa-underline" onclick="rte4(this);"></i>
+            <i class="fa-solid fa-align-left" onclick="rte5(this);"></i>
+            <i class="fa-solid fa-align-center" onclick="rte6(this);"></i>
+            <i class="fa-solid fa-align-right" onclick="rte7(this);"></i>
+            <i class="txtcase" onclick="rte8(this);">Aa</i>   
+            <input type="color" onchange="rte9(this);">         
+        </div>
+        <div class="editorTextArea">
+            <textarea id="etfText" placeholder="Your Message "></textarea>
+            </div>
+        </div>
+        <script>
+            var textbox = document.getElementById("etfText")
+            function rte1(e){
+                var value = e.value;
+                textbox.style.fontSize = value+ "px"
+            }
+            function rte2(e){
+                if(textbox.style.fontWeight == "bold"){
+                    textbox.style.fontWeight="normal"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.fontWeight = "bold";
+                    e.classList.add("active");
+                }
+            }
+            function rte3(e){
+                if(textbox.style.fontStyle == "italic"){
+                    textbox.style.fontStyle="normal"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.fontStyle = "italic";
+                    e.classList.add("active");
+                }
+            }
+            function rte4(e){
+                if(textbox.style.textDecoration == "underline"){
+                    textbox.style.textDecoration="initial"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.textDecoration = "underline";
+                    e.classList.add("active");
+                }
+            }
+            function rte5(e){
+                if(textbox.style.textAlign == "left"){
+                    textbox.style.textAlign="initial"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.textAlign = "left";
+                    e.classList.add("active");
+                }
+            }
+            function rte6(e){
+                if(textbox.style.textAlign == "center"){
+                    textbox.style.textAlign="initial"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.textAlign = "center";
+                    e.classList.add("active");
+                }
+            }
+            function rte7(e){
+                if(textbox.style.textAlign == "right"){
+                    textbox.style.textAlign="initial"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.textAlign = "right";
+                    e.classList.add("active");
+                }
+            }
+            function rte8(e){
+                if(textbox.style.textTransform == "uppercase"){
+                    textbox.style.textTransform="initial"
+                    e.classList.remove("active")
+                }
+                else {
+                    textbox.style.textTransform = "uppercase";
+                    e.classList.add("active");
+                }
+            }
+            function rte9(e){
+                var colrtxt = e.value;
+                textbox.style.color=colrtxt
+            }
+        </script>
+</body>
+</html>
